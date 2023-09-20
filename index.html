@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chip Calculator</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Chip Denomination</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>1,000,000</td>
+      <td><input type="number" id="qty1" min="0"></td>
+      <td id="amount1">0</td>
+    </tr>
+    <tr>
+      <td>500,000</td>
+      <td><input type="number" id="qty2" min="0"></td>
+      <td id="amount2">0</td>
+    </tr>
+    <tr>
+      <td>250,000</td>
+      <td><input type="number" id="qty3" min="0"></td>
+      <td id="amount3">0</td>
+    </tr>
+    <tr>
+      <td>100,000</td>
+      <td><input type="number" id="qty4" min="0"></td>
+      <td id="amount4">0</td>
+    </tr>
+    <tr>
+      <td>50,000</td>
+      <td><input type="number" id="qty5" min="0"></td>
+      <td id="amount5">0</td>
+    </tr>
+    <tr>
+      <td>10,000</td>
+      <td><input type="number" id="qty6" min="0"></td>
+      <td id="amount6">0</td>
+    </tr>
+    <!-- Additional chip denominations -->
+    <tr>
+      <td>5,000</td>
+      <td><input type="number" id="qty7" min="0"></td>
+      <td id="amount7">0</td>
+    </tr>
+    <tr>
+      <td>1,000</td>
+      <td><input type="number" id="qty8" min="0"></td>
+      <td id="amount8">0</td>
+    </tr>
+  </table>
+  <p>Total Amount: <span id="totalAmount">0</span></p>
+
+  <script>
+    document.getElementById("qty1").addEventListener("input", calculateTotal);
+    document.getElementById("qty2").addEventListener("input", calculateTotal);
+    document.getElementById("qty3").addEventListener("input", calculateTotal);
+    document.getElementById("qty4").addEventListener("input", calculateTotal);
+    document.getElementById("qty5").addEventListener("input", calculateTotal);
+    document.getElementById("qty6").addEventListener("input", calculateTotal);
+    document.getElementById("qty7").addEventListener("input", calculateTotal);
+    document.getElementById("qty8").addEventListener("input", calculateTotal);
+
+    function calculateTotal() {
+      var qty1 = document.getElementById("qty1").value;
+      var amount1 = qty1 * 1000000;
+
+      var qty2 = document.getElementById("qty2").value;
+      var amount2 = qty2 * 500000;
+
+      var qty3 = document.getElementById("qty3").value;
+      var amount3 = qty3 * 250000;
+
+      var qty4 = document.getElementById("qty4").value;
+      var amount4 = qty4 * 100000;
+
+      var qty5 = document.getElementById("qty5").value;
+      var amount5 = qty5 * 50000;
+
+      var qty6 = document.getElementById("qty6").value;
+      var amount6 = qty6 * 10000;
+
+      var qty7 = document.getElementById("qty7").value;
+      var amount7 = qty7 * 5000;
+
+      var qty8 = document.getElementById("qty8").value;
+      var amount8 = qty8 * 1000;
+
+      var totalAmount = amount1 + amount2 + amount3 + amount4 + amount5 + amount6 + amount7 + amount8;
+
+      document.getElementById("amount1").textContent = amount1;
+      document.getElementById("amount2").textContent = amount2;
+      document.getElementById("amount3").textContent = amount3;
+      document.getElementById("amount4").textContent = amount4;
+      document.getElementById("amount5").textContent = amount5;
+      document.getElementById("amount6").textContent = amount6;
+      document.getElementById("amount7").textContent = amount7;
+      document.getElementById("amount8").textContent = amount8;
+
+      document.getElementById("totalAmount").textContent = totalAmount;
+    }
+  </script>
+</body>
+</html>
